@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+
+        <div class="col-sm-6">
+            <div class="container-fluid">
+
+                <p>
+                <h3>Вы уже зарегистроированы!</h3></p>
+                <p><a href="{% url 'edit' %}"
+                                      class="btn btn-outline-primary btn-sm">Редактировать QR код</a></p>
+                <br>
+                <!-- <p><a href="{% url 'qr_gen' %}" id="cancel" name="cancel"
+                                                 class="btn btn-outline-primary btn-sm">Открыть QR</a></p> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<h2>{{ body }}</h2>-->
+{% endblock %}

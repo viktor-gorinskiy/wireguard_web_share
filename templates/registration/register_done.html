@@ -1,0 +1,35 @@
+{% extends  'registration/base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+
+        <div class="col-sm-6">
+
+            <div class="card text-center">
+                <div class="card-header">
+                    Отлично
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ new_user.first_name }} {{ new_user.last_name }}!</h5>
+                    <p class="card-text">Теперь необходимо подтвердить регистрацию.</p>
+                    <p class="card-text">На указаный Вами адрес почты: </p>
+                    <h5 class="card-text">{{ new_user.email }}</h5>
+                    <p class="card-text"> отпралена ссылка, подтвердите регистрацию перейдя по ней.</p>
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-sm btn-block">Да нет, шутка, просто войдите в свой аккаунт</a>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+
+        <div class="col-sm-6">
+            <div class="container-fluid">
+
+                <p>
+                <h3>Сервис пока сыроват, но он делает то, что надо!</h3></p>
+                {% if user.is_authenticated %}
+                <h4>Вы уже залогинены, и тут пока нет информации для Вас</h4>
+                <a href="{% url 'edit' %}" class="btn btn-outline-primary btn-sm">Но Вы можете войти в личный кабинет</a>
+                {% else %}
+                <p>Для начала надо <a href="{% url 'registration' %}"
+                                      class="btn btn-outline-primary btn-sm">зарегистрироваться</a></p>
+                <br>
+                <p>Или войти в личный кабинет <a href="{% url 'login' %}" class="btn btn-outline-primary btn-sm">Login</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<h2>{{ body }}</h2>-->
+{% endblock %}
